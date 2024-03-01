@@ -8,13 +8,14 @@ const Home = () => {
     const password = form.password.value;
     const user={name, email, password}
     console.log(user);
-    fetch('http://localhost:5000/users',{
-     method: 'POST',
-     headers: {
-      'content-type': 'application/json',
-      body: JSON.stringify(user)
-     }
-    })
+
+   fetch('http://localhost:5000/users', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(user),
+})
     .then(response => response.json())
     .then(data => {
       console.log(data);
