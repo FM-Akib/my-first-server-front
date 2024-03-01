@@ -1,20 +1,41 @@
 
 const Home = () => {
+  const handlesingup=(e)=>{
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const user={name, email, password}
+    console.log(user);
+    fetch('http://localhost:5000/users',{
+     method: 'POST',
+     headers: {
+      'content-type': 'application/json',
+      body: JSON.stringify(user)
+     }
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
+  }
     return (
         <div>
           
 <div className="w-96 mx-auto my-10 backdrop-blur-lg bg-opacity-80 rounded-lg shadow-lg p-5 bg-gray-900 text-white">
   <h2 className="text-2xl font-bold pb-5">SignUp</h2>
-  <form>
+  <form onSubmit={handlesingup}>
     <div className="mb-4">
       <label className="block mb-2 text-sm font-medium">Your name</label>
       <input
         type="text"
         id="name"
+        name="name"
         className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full py-2.5 px-4"
         placeholder="Andrew Jackson"
         required
-        value=""
+        
       />
     </div>
     <div className="mb-4">
@@ -22,10 +43,11 @@ const Home = () => {
       <input
         type="email"
         id="email"
+        name="email"
         className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full py-2.5 px-4"
         placeholder="andrew@mail.com"
         required
-        value=""
+       
       />
     </div>
     <div className="mb-4">
@@ -33,10 +55,11 @@ const Home = () => {
       <input
         type="password"
         id="password"
+        name="password"
         className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full py-2.5 px-4"
         placeholder="*********"
         required
-        value=""
+       
       />
     </div>
     <div>
