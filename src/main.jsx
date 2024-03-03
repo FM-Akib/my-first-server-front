@@ -7,15 +7,21 @@ import {
 } from "react-router-dom";
 import Home from './Page/Home';
 import Profile from './Page/Profile';
+import Dashboard from './Page/Dashboard';
+import Layout from './Page/Layout';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home></Home>,
+    element: <Layout></Layout>,
     children: [
       {
-        path: "profile",
-        element: <Profile></Profile>
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard></Dashboard>
       }
     ]
   },
