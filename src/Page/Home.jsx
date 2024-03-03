@@ -85,8 +85,12 @@ const Home = () => {
 
 <div className="flex justify-center">
   <Link to="/dashboard">
-<button type="submit" className="text-white  bg-red-600 hover:bg-purple-700 focus:ring-2 focus:ring-blue-300 font-medium rounded-md text-xl mb-10 py-2.5 px-5 w-full sm:w-auto">
+<button type="submit" className="text-white  bg-red-600 hover:bg-purple-700 focus:ring-2 focus:ring-blue-300 font-medium rounded-md text-sm mb-10 py-2.5 px-5 w-full sm:w-auto">
         Go To Profile
+      </button></Link>
+  <Link to="/users">
+<button type="submit" className="text-white  bg-red-600 hover:bg-purple-700 focus:ring-2 focus:ring-blue-300 font-medium rounded-md text-sm ml-4 mb-10 py-2.5 px-5 w-full sm:w-auto">
+       See All
       </button></Link>
       </div>
 
